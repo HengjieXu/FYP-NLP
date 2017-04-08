@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block head_title %}Document Analysis{% endblock %}</title>
+
+    {% include 'head_css.html'%}
+
+  <style>
+      {% block style %}
+      {% endblock %}
+      </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Document Analysis</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="{% url 'main' %}">Overview<span class="sr-only">(current)</span></a></li>
+
+          </ul>
+            <ul class="nav nav-sidebar">
+            <li><a href="{% url 'crawling' %}">News Crawling</a></li>
+
+          </ul>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="{% url 'summarization' %}">Document Summarization</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Natural Language Processing</h1>
+
+          <div class="row placeholders">
+           <p><img src='{% static "img/cloud.png"%}' class="img-responsive"  /></p>
+          </div>
+
+            <footer class="footer">
+             <div class="container">
+                <p class="text-muted">Copyright &copy; 2017 Xu Hengjie</p>
+             </div>
+            </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+
+  </body>
+</html>
